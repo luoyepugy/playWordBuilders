@@ -1,0 +1,12 @@
+{"k":"0000000078","o":"0000000524","v":"001"}
+{"_id":2,"_uid":4,"_dt":1462604316485,"_s":"b47e2fd0bb9ad2886269f27f3ff44ad6"}
+{"key":"site_config","value":{"logo":"/uploads/images/225223c861a4ba6a931c831627f92046.jpg","email":"info@sewise.com","phone":"4006-520-112","address":"深圳市南山区科园路软件产业基地2栋C座401","name":"深圳矽伟智科技有限公司","logobot":"/uploads/images/upload_16910baaf046dc60c30b1a27232bcdc3.jpg","content":"<p>成教招生咨询电话：010-84123416</p><p>自考招生咨询电话：010-81455256</p><p>管理员邮箱：xinxiban@tsinghua.edu.cn</p>","time":"05.07"},"_id":{"$wrap":"$oid","v":2}}
+{"k":"0000000078","o":"0000000152","v":"001"}
+{"_id":3,"_uid":4,"_dt":1462604285475,"_s":"61dad4cc52866ee2eb50a86a2b7a7aff"}
+{"key":"index_config","value":{"premoteVideo":"/uploads/videos/upload_7b928960fa2e8f3293bed3c3222bf577.mp4","webstatus":1},"_id":{"$wrap":"$oid","v":3}}
+{"k":"0000000078","o":"0000000207","v":"001"}
+{"_id":4,"_uid":4,"_dt":1461205889744,"_s":"6d9ccecdd1c219f30e4257cfa585e5bf"}
+{"key":"seo","content":{"name":"视频校园","title":"所见即所得式编辑系统","addr":"http://192.168.1.188:3000","description":"最快最方便的编辑网站方式12"},"_id":{"$wrap":"$oid","v":4}}
+{"k":"0000000078","o":"0000000690","v":"001"}
+{"_id":2,"_uid":4,"_dt":1462605365935,"_s":"0e8fb6adf986ee353577da6bee96d101"}
+{"key":"site_config","value":{"logo":"/uploads/images/225223c861a4ba6a931c831627f92046.jpg","email":"info@sewise.com","phone":"4006-520-112","address":"深圳市南山区科园路软件产业基地2栋C座401","name":"深圳矽伟智科技有限公司","logobot":"/uploads/images/upload_16910baaf046dc60c30b1a27232bcdc3.jpg","content":"\n                            <p>成教招生咨询电话：010-84123416\r</p><p>自考招生咨询电话：010-81455256\r</p><p>管理员邮箱：xinxiban@tsinghua.edu.cn\r</p><p>Copyright © 2016 技术服务与支持：燕山大学信息技术\r</p><p>冀ICP备05023975号-1</p>\n                        ","time":"05.07"},"_id":{"$wrap":"$oid","v":2}}

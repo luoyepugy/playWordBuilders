@@ -1,0 +1,155 @@
+<% include ../head.ejs %>
+  <!-- ******CONTENT****** -->
+  <div class="content container home-page">
+    <div id="promo-slider" class="slider flexslider block" blockid="slide">
+      <%include blocks/slide.ejs%>
+    </div><!--//flexslider-->
+
+
+    <div class="row cols-wrapper">
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <section class="links">
+          <h1 class="section-heading text-highlight"><span class="line">囧途趣语</span></h1>
+          <div class="section-content">
+
+            <%include blocks/funny.ejs%>
+
+          </div><!--//section-content-->
+        </section><!--//links-->
+      </div><!--//col-md-3-->
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <section class="links">
+          <h1 class="section-heading text-highlight"><span class="line">朝九晚五</span></h1>
+          <div class="section-content">
+
+            <%include blocks/daily.ejs%>
+
+          </div><!--//section-content-->
+        </section><!--//links-->
+      </div><!--//col-md-3-->
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <section class="links">
+          <h1 class="section-heading text-highlight"><span class="line">世间词话</span></h1>
+          <div class="section-content">
+
+            <%include blocks/world.ejs%>
+
+          </div><!--//section-content-->
+        </section><!--//links-->
+      </div><!--//col-md-3-->
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <section class="links">
+          <h1 class="section-heading text-highlight"><span class="line">雕刻时光</span></h1>
+          <div class="section-content">
+
+            <%include blocks/entertainment.ejs%>
+
+          </div><!--//section-content-->
+        </section><!--//links-->
+      </div><!--//col-md-3-->
+    </div>
+
+    <div class="row cols-wrapper">
+      <div class="col-sm-12" style="padding:0px">
+        <div class="col-md-8">
+          <section class="video">
+            <h1 class="section-heading text-highlight"><span class="line">周末剧场</span></h1>
+            <div class="section-content block" id="promote-video">
+              <div id="con1" style="width: 330px;height: 245px;display: inline-block; margin-right: 20px;" class="sewise-video" data-url="<%=index_config.premoteVideo||'novideo'%>">
+
+              </div>
+              <div id="con2" style="width: 330px;height: 245px;display: inline-block;" class="sewise-video" data-url="<%=index_config.premoteVideo||'novideo'%>">
+
+              </div>
+            </div><!--//section-content-->
+          </section>
+        </div>
+        <div class="col-md-4">
+          <section class="links">
+            <h1 class="section-heading text-highlight"><span class="line">读者评论</span></h1>
+            <div class="section-content">
+
+              <%include blocks/notices.ejs%>
+
+            </div><!--//section-content-->
+          </section><!--//links-->
+        </div><!--//col-md-3-->
+      </div>
+
+    </div><!--//cols-wrapper-->
+  </div><!--//content-->
+</div><!--//wrapper-->
+
+
+
+<!-- 电话邮箱模态框 -->
+<!-- <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+     <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="gridModalLabel">编辑电话和邮箱</h4>
+            </div>
+            <div class="modal-body">
+                <div class="phone">
+                    <label class="col-sm-3"><i class="fa fa-phone"></i></label>
+                    <div class="col-sm-7">
+                        <input class="form-control" type="text">
+                    </div>
+                </div>
+                <div class="email">
+                    <label class="col-sm-3"><i class="fa fa-envelope"></i></label>
+                    <div class="col-sm-7">
+                        <input class="form-control" type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-theme">新增</button>
+                <button type="button" class="btn btn-theme">保存</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+<!-- 模态框 -->
+
+
+
+
+
+
+
+
+
+<!-- 资源库 -->
+
+
+<script>
+
+  $('#promote-video').on('block.setting',function (ev) {
+    var me = this;
+     ImageSelector.open(function (result) {
+         $(me).find('.sewise-video').data('sewise-player').toPlay(result.videoUrl);
+
+         $.ajax({
+           method: 'put',
+           url: '/settings/index_config',
+           data: JSON.stringify({premoteVideo:result.videoUrl}),
+           contentType: 'application/json',
+           success: function (resp) {
+
+           }
+         });
+
+
+     },{type:2})
+  });
+</script>
+<% include footer.ejs %>
+
+
+
+

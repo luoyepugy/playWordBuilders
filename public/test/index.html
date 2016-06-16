@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+    <title>视频校园</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--<link rel="shortcut icon" href="favicon.ico">-->
+    <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>    -->
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="/index/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="/index/plugins/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="/index/plugins/flexslider/flexslider.css">
+    <link rel="stylesheet" href="/index/plugins/pretty-photo/css/prettyPhoto.css">
+    <script type="text/javascript" src="/index/plugins/jquery-1.11.2.min.js"></script>
+    <!-- Theme CSS -->
+    <!-- <link id="theme-style" rel="stylesheet" href="/index/css/styles.css"> -->
+    <link id="theme-style" rel="stylesheet" href="/index/css/styles-purple.css">
+    <link id="theme-style" rel="stylesheet" href="/css/smarty.css">
+    <style type="text/css">
+        .imageBox
+        {
+            position: relative;
+            border:1px solid #aaa;
+            background: #fff;
+            overflow: hidden;
+            background-repeat: no-repeat;
+            cursor:move;
+        }
+
+        .imageBox .thumbBox
+        {
+
+            width: 200px;
+            height: 200px;
+            box-sizing: border-box;
+            border: 1px solid rgb(102, 102, 102);
+            box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.5);
+            background: none repeat scroll 0% 0% transparent;
+        }
+
+        .imageBox .spinner
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            text-align: center;
+            line-height: 400px;
+            background: rgba(0,0,0,0.7);
+        }
+    </style>
+</head>
+<body>
+<input type="file" class="form-control nice-upload" name="pic" upload-url="/upload1" image-size="320x240" />
+<input type="file" class="form-control nice-upload" name="pic" upload-url="/upload1" image-size="480x240" />
+<input type="file" class="form-control nice-upload" name="pic" upload-url="/upload1" />
+<script type="text/javascript" src="/index/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="./cropbox-min.js"></script>
+<script src="/js/niceupload.js"></script>
+<script>
+
+    $('input:file').on('niceupload.success',function(ev,data){
+        $('body').append('<img src="'+data.url+'">');
+    });
+</script>
+</body>
+</html>
