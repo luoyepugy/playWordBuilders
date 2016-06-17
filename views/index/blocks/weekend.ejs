@@ -1,8 +1,8 @@
 
-<%world.forEach(function(item){%>
-<p class="block nopop article btn-small" blockid="article" article-type="world" articleid="<%=item._id%>">
+<%weekend.forEach(function(item){%>
+<p class="block nopop article btn-small" blockid="article" article-type="weekend" articleid="<%=item._id%>">
     <i class="fa fa-caret-right"></i>
-    <a href="/world/<%=item._id%>" field="title"><%=item.title%></a>
+    <a href="/weekend/<%=item._id%>" field="title"><%=item.title%></a>
     <span class="pull-right"><%=item.time%></span>
 </p>
 <%})%>

@@ -1,0 +1,33 @@
+
+<%if(datas.funny.length == 0 && datas.daily.length == 0 && datas.world.length == 0 && datas.entertainment.length == 0) {%>
+    <p>对不起，你想玩的词汇还在准备中…（点击留言你想玩的词汇，我们将快马加鞭为你准备）</p>
+<%} else {%>
+<%datas.funny.forEach(function(item){%>
+<p class="block nopop article btn-small" blockid="article" article-type="funny" articleid="<%=item._id%>"><i class="fa fa-caret-right"></i><a href="/funny/<%=item._id%>" field="title"><%=item.title%></a><span class="pull-right"><%=item.time%></span></p>
+<%})%>
+
+<%datas.daily.forEach(function(item){%>
+<p class="block nopop article btn-small" blockid="article" article-type="daily" articleid="<%=item._id%>"><i class="fa fa-caret-right"></i><a href="/daily/<%=item._id%>" field="title"><%=item.title%></a><span class="pull-right"><%=item.time%></span></p>
+<%})%>
+
+<%datas.world.forEach(function(item){%>
+<p class="block nopop article btn-small" blockid="article" article-type="world" articleid="<%=item._id%>"><i class="fa fa-caret-right"></i><a href="/world/<%=item._id%>" field="title"><%=item.title%></a><span class="pull-right"><%=item.time%></span></p>
+<%})%>
+
+<%datas.entertainment.forEach(function(item){%>
+<p class="block nopop article btn-small" blockid="article" article-type="e" articleid="<%=item._id%>"><i class="fa fa-caret-right"></i><a href="/entertainment/<%=item._id%>" field="title"><%=item.title%></a><span class="pull-right"><%=item.time%></span></p>
+<%})}%>
+
+
+<script>
+    console.log(new Date());
+    $('.block').on('article-change',function(evt,id,data){
+        var date = new Date();
+        var month=String(date.getMonth()+1).length<2?'0'+(date.getMonth()+1):date.getMonth()+1;       //获取当前月份(0-11,0代表1月)
+        // alert(month);
+        var day=String(date.getDate()).length<2?'0'+(date.getDate()):date.getDate();
+        var time=month+'.'+day;
+        //alert($(".type-nav").find("li.active").attr("typeid"));
+        data['time']=time;
+    });
+</script>

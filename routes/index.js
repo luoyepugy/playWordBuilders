@@ -37,6 +37,12 @@ module.exports=function(router,app) {
           callback(err,ret);
         });
       },
+      weekendIndex:function(callback){
+        db.collection('weekend').find({},{limit:4}).sort({time:-1}).toArray(function(err,ret){
+          // res.json(ret);
+          callback(err,ret);
+        });
+      },
 
       activities:function(callback){
         db.collection('activity').find({limit:4}).sort({event_time:1}).toArray(function(err,ret){

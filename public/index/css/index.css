@@ -17,7 +17,7 @@ ul{
 }
 .section-content p a{
     display: inline-block;
-    width:170px;
+    width:92%;
     white-space:nowrap;/*强制文本在一行内显示*/
     text-overflow:ellipsis; /*溢出省略号，支持ie、safari（webkit）*/
     -o-text-overflow:ellipsis; /*溢出省略号，支持opera*/
@@ -289,10 +289,22 @@ ul{
     line-height: 20px;
 }
 .header .contact {
-    margin-top: 19px;
+    margin-top: 30px;
 }
 .header .contact p.phone span{
     padding: 5px 0 0;
+}
+.header .contact p.search {
+    border: 1px solid #6f7a9f;
+    border-radius: 5px;
+    width: 250px;
+    padding: 0 5px;
+}
+.header .contact p.search input {
+    width:200px;
+    border: 0;
+    outline: none;
+    line-height: 2em;
 }
 .links p{
     margin-bottom: 9px;

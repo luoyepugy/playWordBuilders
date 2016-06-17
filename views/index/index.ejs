@@ -49,22 +49,36 @@
       </div><!--//col-md-3-->
     </div>
 
+    <section class="news">
+      <h1 class="section-heading text-highlight"><span class="line">周末剧场</span></h1>
+      <div class="carousel-controls">
+        <a class="prev" href="#news-carousel" data-slide="prev"><i class="fa fa-caret-left"></i></a>
+        <a class="next" href="#news-carousel" data-slide="next"><i class="fa fa-caret-right"></i></a>
+      </div><!--//carousel-controls-->
+      <div class="section-content clearfix">
+
+            <%include blocks/news.ejs%>
+
+      </div><!--//section-content-->
+    </section><!--//news-->
+
     <div class="row cols-wrapper">
-      <div class="col-sm-12" style="padding:0px">
-        <div class="col-md-8">
+      <div class="col-xs-12" style="padding:0px">
+        <div class="col-md-9">
           <section class="video">
             <h1 class="section-heading text-highlight"><span class="line">周末剧场</span></h1>
-            <div class="section-content block" id="promote-video">
-              <div id="con1" style="width: 330px;height: 245px;display: inline-block; margin-right: 20px;" class="sewise-video" data-url="<%=index_config.premoteVideo||'novideo'%>">
+            <div class="carousel-controls">
+              <a class="prev" href="#weekend-carousel" data-slide="prev"><i class="fa fa-caret-left"></i></a>
+              <a class="next" href="#weekend-carousel" data-slide="next"><i class="fa fa-caret-right"></i></a>
+            </div><!--//carousel-controls-->
+            <div class="section-content clearfix">
 
-              </div>
-              <div id="con2" style="width: 330px;height: 245px;display: inline-block;" class="sewise-video" data-url="<%=index_config.premoteVideo||'novideo'%>">
+                  <%include blocks/indexWeekend.ejs%>
 
-              </div>
             </div><!--//section-content-->
           </section>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
           <section class="links">
             <h1 class="section-heading text-highlight"><span class="line">读者评论</span></h1>
             <div class="section-content">

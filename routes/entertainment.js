@@ -55,7 +55,7 @@ module.exports=function(router,app){
         },function(err,ret){
             ret.title =  '图文详情';
             // res.json(ret);
-            res.render('index/funny-single', ret);
+            res.render('index/entertainment-single', ret);
 
         });
 

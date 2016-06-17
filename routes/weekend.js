@@ -5,11 +5,11 @@ module.exports=function(router,app){
 
     	var async = require('async');
         async.parallel({
-            daily:function(callback){
-                db.collection('daily').find({}).toArray(function(err,ret){
-                    db.collection('daily').find({}).sort({time:-1}).toArray(function(err,ret){
+            weekend:function(callback){
+                db.collection('weekend').find({}).toArray(function(err,ret){
+                    db.collection('weekend').find({}).sort({time:-1}).toArray(function(err,ret){
                         if(ret.length==0){
-                            ret.push({title:'默认朝九晚五标题',content:'默认朝九晚五内容',_id:'0'});
+                            ret.push({title:'默认周末剧场标题',content:'默认周末剧场内容',_id:'0'});
                         }
                         callback(err,ret);
                     });
@@ -17,23 +17,16 @@ module.exports=function(router,app){
             }
         },function(err,ret){
            // res.json(ret);
-           res.render('index/daily',ret);
+           res.render('index/weekend',ret);
         });
 	});
+
 
     router.get('/:id', function(req, res, next) {
         var async = require('async');
         async.parallel({
             article:function(callback){
-                db.collection('daily').findOne({_id:req.params.id},function(err,ret){
-                    // if(!ret.hasOwnProperty('imageUrl')){
-                    //     ret.push({imgUrl:'/index/images/default.jpg',content:'默认文章内容'});
-                    // }
-                    // if(!ret.hasOwnProperty('imgUrl')){
-                    //     ret.imgUrl='/index/images/default.jpg';
-                    //     ret.content='默认文章内容';
-                    // }
-
+                db.collection('weekend').findOne({_id:req.params.id},function(err,ret){
                     callback(err,ret);
                 });
             },
@@ -54,7 +47,7 @@ module.exports=function(router,app){
         },function(err,ret){
             ret.title =  '图文详情';
             // res.json(ret);
-            res.render('index/daily-single', ret);
+            res.render('index/weekend-single', ret);
 
         });
 
@@ -64,15 +57,15 @@ module.exports=function(router,app){
 	router.put('/:id',function(req,res){
         if(req.params.id == "0"){
             
-            db.collection('daily').insert(req.body,{w:1},function(err,ret){
+            db.collection('weekend').insert(req.body,{w:1},function(err,ret){
                 if(err==null){
-                    res.json({success:true,daily:ret});
+                    res.json({success:true,weekend:ret});
                 }else{
                     res.json({errors:err.message});
                 }
             });
         }else{
-            db.collection('daily').update({_id:req.params.id},{$set:req.body},function(err,ret){
+            db.collection('weekend').update({_id:req.params.id},{$set:req.body},function(err,ret){
                 if(err==null){
                     res.json({success:true});
                 }else{
@@ -83,7 +76,7 @@ module.exports=function(router,app){
 
     })
         .delete('/:id',function (req,res) {
-            db.collection('daily').remove({_id:req.params.id},function (err,ret) {
+            db.collection('weekend').remove({_id:req.params.id},function (err,ret) {
                 if(err){
                     res.json({success:false,errors:err.message});
                 }else{

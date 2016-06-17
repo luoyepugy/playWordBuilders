@@ -2,7 +2,7 @@
 <%entertainment.forEach(function(item){%>
 <p class="block nopop article btn-small" blockid="article" article-type="entertainment" articleid="<%=item._id%>">
     <i class="fa fa-caret-right"></i>
-    <a href="/notice/<%=item._id%>" field="title"><%=item.title%></a>
+    <a href="/entertainment/<%=item._id%>" field="title"><%=item.title%></a>
     <span class="pull-right"><%=item.time%></span>
 </p>
 <%})%>

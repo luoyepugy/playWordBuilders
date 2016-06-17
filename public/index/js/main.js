@@ -1,6 +1,30 @@
 var map;
 $(document).ready(function() {
 
+    /* ======== search ======== */
+    $('#searchWord').keyup(function(e) {
+        if(e.keyCode == 13) {
+            var val = $(this).val();
+            if(val) {
+                $.ajax({
+                    type: 'POST',
+                    url: '/search',
+                    data: {'q': val},
+                    dataType: 'json',
+                    success: function(data) {
+                        // console.log(data);
+                        window.location.href = '/search';
+                    },
+                    error: function(err) {
+                        console.log(err);
+                    }
+                });
+            }
+        }
+    });
+
+
+
     /* ======= Flexslider ======= */
     $('.flexslider').flexslider({
         animation: "fade"
@@ -15,6 +39,8 @@ $(document).ready(function() {
     $('#videos-carousel').carousel({interval: false});
     $('#testimonials-carousel').carousel({interval: 6000, pause: "hover"});
     $('#awards-carousel').carousel({interval: false});
+    // 周末剧场
+    $('#weekend-carousel').carousel({interval: false});
     
     
     /* ======= Flickr PhotoStream ======= */
