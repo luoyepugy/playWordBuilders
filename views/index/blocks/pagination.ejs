@@ -1,0 +1,42 @@
+
+<nav class="pull-right">
+  <ul class="pagination">
+
+    <%if(cur-1 == 0) {%>
+    <li class="disabled" >
+      <a href="#" aria-label="Previous">
+        <span aria-hidden="true">上一页</span>
+      </a>
+    </li>
+      <% } else { %>
+      <li>
+      <a href="/funny/pages/<%=cur-1%>" aria-label="Previous">
+        <span aria-hidden="true">上一页</span>
+      </a>
+      </li>
+     <% }%>
+
+	<% for(var i=1; i <= totalNum; i++) {%>
+		<%if(i == cur) {%>
+	    	<li class="active"><a href="/funny/pages/<%=i%>"><%=i%></a></li>
+	    <% } else {%>
+	    	<li><a href="/funny/pages/<%=i%>"><%=i%></a></li>
+	    <%}%>
+	<% } %>
+
+    <%if(cur+1 <= totalNum) {%>
+	    <li>
+	      <a href="/funny/pages/<%=cur+1%>" aria-label="Next">
+	        <span aria-hidden="true">下一页</span>
+	      </a>
+	    </li>
+    <% } else { %>
+	   	<li class="disabled" >
+	      <a href="#" aria-label="Next">
+	        <span aria-hidden="true">下一页</span>
+	      </a>
+	    </li>
+    <% }%>
+
+  </ul>
+</nav>

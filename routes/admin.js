@@ -357,6 +357,11 @@ module.exports = function(router,app){
                     callback(err,ret);
                 });
             },
+            livehost:function(callback){
+                db.collection('livehost').findOne({},function(err,ret){
+                    callback(err,ret);
+                });
+            },
             user:function(callback){
                 callback(null,req.session.user);
             }
@@ -847,5 +852,34 @@ module.exports = function(router,app){
 
                 })
 
+    router.post('/livehost/', function(req, res) {
+        var collection=db.collection('livehost');
+        collection.findOne({},function(err,ret){
+            if(err){
+                res.json({success:false,err:err.message});
+            }else{
+                if(ret!=null){
+                    collection.update({},{host:req.body.host, accessid:req.body.accessid,port:req.body.port},function(err,ret){
+                        if(err)res.json({success:false,err:err.message})
+                        else res.json({success:true})
+                    })
+                }else{
+                    var data={
+                        'host':req.body.host,
+                        'accessid':req.body.accessid,
+
+                    };
+                    collection.insert(data,{w:1},function(err){
+                        if(err){
+                            console.log(err);
+                        }else{
+                            res.json({success:true})
+                        }
+                    })
+                }
+            }
+
+        })
+    })
 
             }

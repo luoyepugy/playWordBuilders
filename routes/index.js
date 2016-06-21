@@ -38,7 +38,7 @@ module.exports=function(router,app) {
         });
       },
       weekendIndex:function(callback){
-        db.collection('weekend').find({},{limit:4}).sort({time:-1}).toArray(function(err,ret){
+        db.collection('weekend').find({},{limit:6}).sort({time:-1}).toArray(function(err,ret){
           // res.json(ret);
           callback(err,ret);
         });

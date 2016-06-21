@@ -40,7 +40,7 @@
                                 </div>
 
                                 <div class="page-row article-content content">
-                                    <%-article.content||'默认评论内容'%>
+                                    <%-article.content||'默认内容'%>
                                 </div>
                              <!--    <div class="page-row comment">
                                     <textarea></textarea>
@@ -62,8 +62,8 @@
         var hours = String(date.getHours()).length<2?'0'+(date.getHours()):date.getHours();
         var minutes = String(date.getMinutes()).length<2?'0'+(date.getMinutes()):date.getMinutes();
         var seconds = String(date.getSeconds()).length<2?'0'+(date.getSeconds()):date.getSeconds();
-        var time=year+'-'+month+'-'+day+' '+hours+':'+minutes+':'+seconds;
-
+        // var time=year+'-'+month+'-'+day+' '+hours+':'+minutes+':'+seconds;
+        var time=month+'.'+day;
         //alert($(".type-nav").find("li.active").attr("typeid"));
         data['time']=time;
         data['auther'] = '<%-user.username%>';

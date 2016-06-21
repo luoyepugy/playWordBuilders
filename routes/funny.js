@@ -26,6 +26,7 @@ module.exports=function(router,app){
         });
 	});
 
+
     router.get('/:id', function(req, res, next) {
         var async = require('async');
         async.parallel({
@@ -96,5 +97,16 @@ module.exports=function(router,app){
                 }
             });
         });
+
+
+    router.get('/pages/:num', function(req, res) {
+        var len = 0;
+        db.collection('funny').find({}).toArray(function(err,ret){
+            len = Math.ceil(ret.length/10);
+        });
+        db.collection('funny').find({}).limit(req.params.num*10).skip((req.params.num-1)*10).sort({time:-1}).toArray(function(err,ret){
+            res.render('index/funny',{'funny':ret, 'cur': Number(req.params.num), 'totalNum': len});
+        });
+    });
 
 }
