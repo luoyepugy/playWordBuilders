@@ -23,35 +23,10 @@ module.exports=function(router,app){
 
 
     router.get('/:id', function(req, res, next) {
-        var async = require('async');
-        async.parallel({
-            article:function(callback){
-                db.collection('weekend').findOne({_id:req.params.id},function(err,ret){
-                    callback(err,ret);
-                });
-            },
-            activities:function(callback){
-                var date = new Date();
-                var year = date.getFullYear();
-                var month=String(date.getMonth()+1).length<2?'0'+(date.getMonth()+1):date.getMonth()+1;       //获取当前月份(0-11,0代表1月)
-                // alert(month);
-                var day=String(date.getDate()).length<2?'0'+(date.getDate()):date.getDate();
-                var hours = String(date.getHours()).length<2?'0'+(date.getHours()):date.getHours();
-                var minutes = String(date.getMinutes()).length<2?'0'+(date.getMinutes()):date.getMinutes();
-                var time=year+'-'+month+'-'+day+' '+hours+':'+minutes;
-                db.collection('activity').find({event_time:{$gt:time}},{limit:4}).sort({event_time:1}).toArray(function(err,ret){
-                    callback(err,ret);
-                });
-
-            }
-        },function(err,ret){
-            ret.title =  '图文详情';
-            // res.json(ret);
-            res.render('index/weekend-single', ret);
-
+        db.collection('weekend').findOne({_id:req.params.id},function(err,ret){
+            res.render('index/list-single', {'article':ret, 'type':'weekend'});
+                
         });
-
-
     });
 
 	router.put('/:id',function(req,res){
