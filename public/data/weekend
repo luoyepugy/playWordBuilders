@@ -25,9 +25,3 @@
 {"k":"0000000078","o":"0000000360","v":"001"}
 {"_id":8,"_uid":9,"_dt":1466390811356,"_s":"1f9e6413552cba6caf4308a40c7b69c1"}
 {"title":"周末剧场7","time":"2016-06-20 10:46:51","_id":{"$wrap":"$oid","v":8},"imgUrl":"","videoUrl":"/uploads/videos/upload_f155623e5a95c76b8a22c94a2ed640d5.mp4","content":"\n                                    \n                                    默认评论内容\n                                \n                                ","auther":"admin"}
-{"k":"0000000078","o":"0000000340","v":"001"}
-{"_id":7,"_uid":9,"_dt":1466479896679,"_s":"43c6c762d9ce4578b54fadc57096ae11"}
-{"title":"周末剧场6","time":"06.21","_id":{"$wrap":"$oid","v":7},"imgUrl":"","videoUrl":"/uploads/videos/upload_4dccf41cc09581daa609d59e0d48f44c.mp4","content":"\n                                    \n                                    默认内容\n                                \n                                ","auther":"admin"}
-{"k":"0000000078","o":"0000000412","v":"001"}
-{"_id":9,"_uid":9,"_dt":1466503326539,"_s":"dd7f6e1cf73f40d9fafee19b28cc9830"}
-{"title":"周末剧场8","time":"06.21","_id":{"$wrap":"$oid","v":9},"imgUrl":"","videoUrl":"/uploads/videos/upload_da626f2567c9998d46aa0886735947c9.mp4","content":"\n                                    \n                                    \n                                    默认内容\n                                \n                                \n                                ","auther":"admin"}

@@ -30,6 +30,20 @@ ul{
     }
 }
 
+/* 导航样式修改 */
+@media (min-width: 992px) {
+    .nav {
+        width: 100%;
+    }
+    .nav > .nav-item {
+        width: 16.66666667%;
+        text-align: center;
+    }
+}
+@media (max-width: 992px) {
+
+}
+
 /*.page-wrapper .page-heading {
     margin-bottom: 0px;
 }*/

@@ -60,4 +60,19 @@ module.exports=function(router,app){
             });
         });
 
+
+    // 分页功能
+    router.get('/pages/:num', function(req, res) {
+        var len = 0;
+        var num = Number(req.params.num);
+
+        db.collection('weekend').find({}).toArray(function(err,ret){
+            len = Math.ceil(ret.length/15);
+        });
+        db.collection('weekend').find({}).limit(15).skip((num-1)*15).sort({time:-1}).toArray(function(err,ret){
+            res.render('index/weekend',{'weekend':ret, 'curPage': num, 'totalPages': len, 'type': 'weekend'});
+        });
+    });
+
+
 }

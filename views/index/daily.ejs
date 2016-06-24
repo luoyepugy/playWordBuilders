@@ -23,6 +23,9 @@
 
                     </div><!--//page-row-->
                 </div><!--//page-content-->
+                <%if(totalPages > 1) {%>
+                    <%include ./blocks/pagination.ejs %>
+                <%}%>
             </div><!--//page--> 
         </div><!--//content-->
 

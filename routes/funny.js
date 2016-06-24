@@ -61,17 +61,19 @@ module.exports=function(router,app){
         });
 
 
-    // 分页功能测试
+    // 分页功能
     router.get('/pages/:num', function(req, res) {
         var len = 0;
         var num = Number(req.params.num);
 
         db.collection('funny').find({}).toArray(function(err,ret){
-            len = Math.ceil(ret.length/2);
+            len = Math.ceil(ret.length/15);
         });
-        db.collection('funny').find({}).limit(2).skip((num-1)*2).sort({time:-1}).toArray(function(err,ret){
-            res.render('index/funny',{'funny':ret, 'cur': num, 'totalNum': len, 'type': 'funny'});
+        db.collection('funny').find({}).limit(15).skip((num-1)*15).sort({time:-1}).toArray(function(err,ret){
+            res.render('index/funny',{'funny':ret, 'curPage': num, 'totalPages': len, 'type': 'funny'});
         });
     });
+
+    
 
 }

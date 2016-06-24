@@ -260,6 +260,10 @@ ul.custom-list-style li {
   font-family: 'open sans', arial, sans-serif;
   font-weight: 500;
 }
+
+ul.pagination > li > a {
+  color: #6f7a9f;
+}
 .pagination > .active > a,
 .pagination > .active > span,
 .pagination > .active > a:hover,
@@ -269,6 +273,7 @@ ul.custom-list-style li {
   background-color: #6f7a9f;
   border-color: #6f7a9f;
 }
+
 .pagination > li > a:hover,
 .pagination > li > span:hover,
 .pagination > li > a:focus,

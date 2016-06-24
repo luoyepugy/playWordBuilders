@@ -3,19 +3,35 @@
     <p>对不起，你想玩的词汇还在准备中…（点击留言你想玩的词汇，我们将快马加鞭为你准备）</p>
 <%} else {%>
 <%datas.funny.forEach(function(item){%>
-<p class="block nopop article btn-small" blockid="article" article-type="funny" articleid="<%=item._id%>"><i class="fa fa-caret-right"></i><a href="/funny/<%=item._id%>" field="title"><%=item.title%></a><span class="pull-right"><%=item.time%></span></p>
+<p class="block nopop article btn-small" blockid="article" article-type="funny" articleid="<%=item._id%>">
+    <i class="fa fa-caret-right"></i>
+    <a href="/funny/<%=item._id%>" field="title"><%=item.title%></a>
+    <span class="pull-right"><%=item.time%></span>
+</p>
 <%})%>
 
 <%datas.daily.forEach(function(item){%>
-<p class="block nopop article btn-small" blockid="article" article-type="daily" articleid="<%=item._id%>"><i class="fa fa-caret-right"></i><a href="/daily/<%=item._id%>" field="title"><%=item.title%></a><span class="pull-right"><%=item.time%></span></p>
+<p class="block nopop article btn-small" blockid="article" article-type="daily" articleid="<%=item._id%>">
+    <i class="fa fa-caret-right"></i>
+    <a href="/daily/<%=item._id%>" field="title"><%=item.title%></a>
+    <span class="pull-right"><%=item.time%></span>
+</p>
 <%})%>
 
 <%datas.world.forEach(function(item){%>
-<p class="block nopop article btn-small" blockid="article" article-type="world" articleid="<%=item._id%>"><i class="fa fa-caret-right"></i><a href="/world/<%=item._id%>" field="title"><%=item.title%></a><span class="pull-right"><%=item.time%></span></p>
+<p class="block nopop article btn-small" blockid="article" article-type="world" articleid="<%=item._id%>">
+    <i class="fa fa-caret-right"></i>
+    <a href="/world/<%=item._id%>" field="title"><%=item.title%></a>
+    <span class="pull-right"><%=item.time%></span>
+</p>
 <%})%>
 
 <%datas.entertainment.forEach(function(item){%>
-<p class="block nopop article btn-small" blockid="article" article-type="e" articleid="<%=item._id%>"><i class="fa fa-caret-right"></i><a href="/entertainment/<%=item._id%>" field="title"><%=item.title%></a><span class="pull-right"><%=item.time%></span></p>
+<p class="block nopop article btn-small" blockid="article" article-type="e" articleid="<%=item._id%>">
+    <i class="fa fa-caret-right"></i>
+    <a href="/entertainment/<%=item._id%>" field="title"><%=item.title%></a>
+    <span class="pull-right"><%=item.time%></span>
+</p>
 <%})}%>
 
 

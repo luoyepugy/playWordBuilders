@@ -2,7 +2,7 @@
 <nav class="pull-right">
   <ul class="pagination">
     
-    <%if(cur == 1) {%>
+    <%if(curPage == 1) {%>
     <li class="disabled"><span>首页</span></li>
     <li class="disabled">
       <a href="#" aria-label="Previous">
@@ -12,37 +12,37 @@
       <% } else { %>
       <li><a href="/<%=type%>/pages/1">首页</a></li>
       <li>
-      <a href="/<%=type%>/pages/<%=cur-1%>" aria-label="Previous">
+      <a href="/<%=type%>/pages/<%=curPage-1%>" aria-label="Previous">
         <span aria-hidden="true">上一页</span>
       </a>
       </li>
      <% }%>
   
 
-  <%if((totalNum > 4) && (totalNum-cur > 2)) {%>
-      <%if(cur == 1) {%>
+  <%if((totalPages > 4) && (totalPages-curPage > 2)) {%>
+      <%if(curPage == 1) {%>
         <li class="active"><a href="/<%=type%>/pages/1>"><%=1%></a></li>
-        <li><a href="/<%=type%>/pages/<%=cur+1%>"><%=cur+1%></a></li>
+        <li><a href="/<%=type%>/pages/<%=curPage+1%>"><%=curPage+1%></a></li>
       <%} else {%>
-        <li><a href="/<%=type%>/pages/<%=cur-1%>"><%=cur-1%></a></li>
-        <li class="active"><a href="/<%=type%>/pages/<%=cur%>"><%=cur%></a></li>
+        <li><a href="/<%=type%>/pages/<%=curPage-1%>"><%=curPage-1%></a></li>
+        <li class="active"><a href="/<%=type%>/pages/<%=curPage%>"><%=curPage%></a></li>
       <%}%>
       <li><span>...</span></li>
-      <li><a href="/<%=type%>/pages/<%=totalNum-1%>"><%=totalNum-1%></a></li>
-      <li><a href="/<%=type%>/pages/<%=totalNum%>"><%=totalNum%></a></li>
-  <%}else if ((totalNum > 4) && (totalNum-cur <= 2) && (cur!=1)){%>
+      <li><a href="/<%=type%>/pages/<%=totalPages-1%>"><%=totalPages-1%></a></li>
+      <li><a href="/<%=type%>/pages/<%=totalPages%>"><%=totalPages%></a></li>
+  <%}else if ((totalPages > 4) && (totalPages-curPage <= 2) && (curPage!=1)){%>
       <li><a href="/<%=type%>/pages/<%=1%>"><%=1%></a></li>
       <li><span>...</span></li>
-      <% for(var j=totalNum-2; j <= totalNum; j++) {%>
-      <%if(j == cur) {%>
+      <% for(var j=totalPages-2; j <= totalPages; j++) {%>
+      <%if(j == curPage) {%>
           <li class="active"><a href="/<%=type%>/pages/<%=j%>"><%=j%></a></li>
         <% } else {%>
           <li><a href="/<%=type%>/pages/<%=j%>"><%=j%></a></li>
         <%}%>
     <% } %>
   <%} else {%>
-    <% for(var i=1; i <= totalNum; i++) {%>
-      <%if(i == cur) {%>
+    <% for(var i=1; i <= totalPages; i++) {%>
+      <%if(i == curPage) {%>
           <li class="active"><a href="/<%=type%>/pages/<%=i%>"><%=i%></a></li>
         <% } else {%>
           <li><a href="/<%=type%>/pages/<%=i%>"><%=i%></a></li>
@@ -51,7 +51,7 @@
   <%}%>
 
 
-    <%if(cur == totalNum) {%>
+    <%if(curPage == totalPages) {%>
       <li class="disabled">
         <a href="#" aria-label="Next">
           <span aria-hidden="true">下一页</span>
@@ -60,11 +60,11 @@
       <li class="disabled"><span>末页</span></li>
     <% } else { %>
 	   	<li>
-        <a href="/<%=type%>/pages/<%=cur+1%>" aria-label="Next">
+        <a href="/<%=type%>/pages/<%=curPage+1%>" aria-label="Next">
           <span aria-hidden="true">下一页</span>
         </a>
       </li>
-      <li><a href="/<%=type%>/pages/<%=totalNum%>">末页</a></li>
+      <li><a href="/<%=type%>/pages/<%=totalPages%>">末页</a></li>
     <% }%>
 
   

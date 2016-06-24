@@ -2,7 +2,7 @@
     <div class="carousel-inner">
         <div class="item active">
             <%for(var i=0;i<Math.min(3,weekendIndex.length);i++){%>
-            <div class="col-md-4">
+            <div class="col-lg-4 col-sm-6">
                 <div style="width: 330px;height: 245px; margin-right: 20px; display: inline-block;" class="sewise-video" data-url="<%=weekendIndex[i].videoUrl ||'novideo'%>">
                 </div>
             </div>
@@ -11,7 +11,7 @@
 
         <div class="item ">
             <%for(var i=3;i<weekendIndex.length;i++){%>
-                <div class="col-md-4">
+                <div class="col-lg-4  col-sm-6">
                     <div style="width: 330px;height: 245px; margin-right: 20px; display: inline-block;" class="sewise-video" data-url="<%=weekendIndex[i].videoUrl ||'novideo'%>">
                     </div>
                 </div>

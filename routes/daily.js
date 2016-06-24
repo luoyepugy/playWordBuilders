@@ -22,22 +22,13 @@ module.exports=function(router,app){
 	});
 
     router.get('/:id', function(req, res, next) {
-        var async = require('async');
-        async.parallel({
-            article:function(callback){
-                db.collection('daily').findOne({_id:req.params.id},function(err,ret){
-                    callback(err,ret);
-                });
-            }
-        },function(err,ret){
-            ret.title =  '图文详情';
-            // res.json(ret);
-            res.render('index/daily-single', ret);
-
+        db.collection('daily').findOne({_id:req.params.id},function(err,ret){
+            res.render('index/list-single', {'article':ret, 'type':'daily'});
+                
         });
-
-
     });
+
+
 
 	router.put('/:id',function(req,res){
         if(req.params.id == "0"){
@@ -69,5 +60,20 @@ module.exports=function(router,app){
                 }
             });
         });
+
+
+    // 分页功能
+    router.get('/pages/:num', function(req, res) {
+        var len = 0;
+        var num = Number(req.params.num);
+
+        db.collection('daily').find({}).toArray(function(err,ret){
+            len = Math.ceil(ret.length/15);
+        });
+        db.collection('daily').find({}).limit(15).skip((num-1)*15).sort({time:-1}).toArray(function(err,ret){
+            res.render('index/daily',{'daily':ret, 'curPage': num, 'totalPages': len, 'type': 'daily'});
+        });
+    });
+
 
 }

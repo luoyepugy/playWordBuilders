@@ -133,19 +133,20 @@
         </div><!--//to-bar-->
 
         <div class="header-main container" >
-            <h1 class="logo col-md-3 col-sm-4 block nopop article"  blockid="article" article-type="settings" articleid="site_config"  >
-                <a href="/" ><span class="img" field="logo"><img id="logo" data-size="281 * 84" src="<%=site_config.logo%>" alt="Logo"></span></a>
-            </h1><!--//logo-->
-            <div class="info col-sm-9">
+            <div class="row">
+                <h1 class="logo col-xs-12 col-md-3 col-sm-4 block nopop article"  blockid="article" article-type="settings" articleid="site_config"  >
+                    <a href="/"><span class="img" field="logo"><img id="logo" data-size="281 * 84" src="<%=site_config.logo%>" alt="Logo"></span></a>
+                </h1><!--//logo-->
+                <div class="info col-xs-12 col-sm-8 col-md-9">
 
-                <div class="contact pull-right block nopop article btn-small"  blockid="article" article-type="settings" articleid="site_config">
-                    <!-- <p class="phone"><i class="fa fa-phone"></i><span field="phone"><%=site_config.phone||'联系电话'%></span></p>
-                    <br />
-                    <p class="email"><i class="fa fa-envelope"></i><span field="email"><%=site_config.email||'邮箱地址'%></span></p><br /> -->
-                    <p class="search"><i class="fa fa-search"></i><input type="text" name="search" id="searchWord" placeholder="请输入搜索词汇" /></p>
-                </div><!--//contact-->
-
-            </div><!--//info-->
+                    <div class="contact pull-right block nopop article btn-small"  blockid="article" article-type="settings" articleid="site_config">
+                        <!-- <p class="phone"><i class="fa fa-phone"></i><span field="phone"><%=site_config.phone||'联系电话'%></span></p>
+                        <br />
+                        <p class="email"><i class="fa fa-envelope"></i><span field="email"><%=site_config.email||'邮箱地址'%></span></p><br /> -->
+                        <p class="search"><i class="fa fa-search"></i><input type="text" name="search" id="searchWord" placeholder="请输入搜索词汇" /></p>
+                    </div><!--//contact-->
+                </div><!--//info-->
+            </div>
         </div><!--//header-main-->
     </header><!--//header-->
 
@@ -161,13 +162,13 @@
                 </button><!--//nav-toggle-->
             </div><!--//navbar-header-->
             <div class="navbar-collapse collapse row" id="navbar-collapse">
-                <ul class="nav navbar-nav col-md-12">
-                    <li class="nav-item col-md-2"><a href="/">首页</a></li>
-                    <li class="nav-item col-md-2"><a href="/funny">囧途趣语</a></li>
-                    <li class="nav-item col-md-2"><a href="/daily">朝九晚五</a></li>
-                    <li class="nav-item col-md-2"><a href="/world">世间词话</a></li>
-                    <li class="nav-item col-md-2"><a href="/entertainment">雕刻时光</a></li>
-                    <li class="nav-item col-md-2"><a href="/weekend">周末剧场</a></li>
+                <ul class="nav navbar-nav">
+                    <li class="nav-item"><a href="/">首页</a></li>
+                    <li class="nav-item"><a href="/funny/pages/1">囧途趣语</a></li>
+                    <li class="nav-item"><a href="/daily/pages/1">朝九晚五</a></li>
+                    <li class="nav-item"><a href="/world/pages/1">世间词话</a></li>
+                    <li class="nav-item"><a href="/entertainment/pages/1">雕刻时光</a></li>
+                    <li class="nav-item"><a href="/weekend/pages/1">周末剧场</a></li>
                 </ul><!--//nav-->
             </div><!--//navabr-collapse-->
         </div><!--//container-->
